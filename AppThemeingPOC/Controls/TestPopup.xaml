@@ -1,0 +1,38 @@
+<toolkit:Popup x:Class="IconTintIssuesPOC.Controls.TestPopup"
+               xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               xmlns:views="clr-namespace:AppThemeingPOC.Views">
+
+    <Grid BackgroundColor="{DynamicResource OtherBackgroundColor}"
+          RowDefinitions="auto,*"
+          WidthRequest="700"
+          HeightRequest="480">
+        <Grid BackgroundColor="{DynamicResource OtherBackgroundColor}"
+              ColumnDefinitions="*,auto"
+              Grid.Row="0">
+            <Label Background="{DynamicResource OtherBackgroundColor}"
+                   MaxLines="20"
+                   TextColor="{DynamicResource PrimaryTextColor}"
+                   Grid.Column="0"
+                   Padding="20">
+                Please use the close button vs clicking off the popup.  We have detected a popup issue on windows where clicking off the popup to close the first time works, but bring it back up and the next time, it will close the popup but leave the background layer.
+            </Label>
+            <Button Text="Close"
+                    Clicked="OnCloseButtonClicked"
+                    VerticalOptions="Start"
+                    BorderWidth="2"
+                    CornerRadius="3"
+                    BackgroundColor="{DynamicResource PrimaryBackgroundColor}"
+                    BorderColor="{DynamicResource DefaultBorderColor}"
+                    TextColor="{DynamicResource ImageTintColor}"
+                    Grid.Column="1"
+                    HeightRequest="50"
+                    Margin="10" />
+        </Grid>
+
+        <views:TintColorPage Grid.Row="1" />
+
+    </Grid>
+
+</toolkit:Popup>

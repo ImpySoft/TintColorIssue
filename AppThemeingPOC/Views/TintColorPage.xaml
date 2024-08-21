@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView x:Class="AppThemeingPOC.Views.TintColorPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:IconTintIssuesPOC.Helpers"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+
+
+    <Grid BackgroundColor="{DynamicResource PrimaryBackgroundColor}"
+          RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,*"
+          RowSpacing="10"
+          Padding="20">
+
+        <Grid ColumnDefinitions="300, Auto"
+              Grid.Row="1"
+              ColumnSpacing="20">
+            <Label Text="Untouched Image"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   Background="Transparent"
+                   TextColor="{DynamicResource PrimaryTextColor}"
+                   FontSize="14"
+                   Grid.Column="0" />
+            <Image Source="circle_exclaimation.png"
+                   Aspect="Center"
+                   Grid.Column="1"
+                   WidthRequest="40"
+                   HeightRequest="40" />
+        </Grid>
+
+        <Grid ColumnDefinitions="300, Auto, Auto"
+              Grid.Row="2"
+              ColumnSpacing="20">
+            <Label Text="Toolkit behavior ToolTinted Image"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   Background="Transparent"
+                   TextColor="{DynamicResource PrimaryTextColor}"
+                   FontSize="14"
+                   Grid.Column="0" />
+            <Image Source="circle_exclaimation.png"
+                   Aspect="Center"
+                   Grid.Column="1"
+                   WidthRequest="40"
+                   HeightRequest="40">
+                <Image.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="{StaticResource ImageTintColor}" />
+                </Image.Behaviors>
+            </Image>
+            <Image Source="circle_exclaimation.png"
+                   Aspect="Center"
+                   helpers:IconTintColor.TintColor="{DynamicResource ImageTintColor}"
+                   Grid.Column="2"
+                   WidthRequest="40"
+                   HeightRequest="40" />
+        </Grid>
+
+        <Grid ColumnDefinitions="300, Auto"
+              Grid.Row="3"
+              ColumnSpacing="20">
+            <Label Text="Untouched ImageButton"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   Background="Transparent"
+                   TextColor="{DynamicResource PrimaryTextColor}"
+                   FontSize="14"
+                   Grid.Column="0" />
+            <ImageButton Source="circle_exclaimation.png"
+                         Aspect="Center"
+                         BorderWidth="2"
+                         CornerRadius="3"
+                         BackgroundColor="Transparent"
+                         BorderColor="{DynamicResource DefaultBorderColor}"
+                         Grid.Column="1"
+                         WidthRequest="40"
+                         HeightRequest="40" />
+        </Grid>
+
+        <Grid ColumnDefinitions="300, Auto, Auto"
+              Grid.Row="4"
+              ColumnSpacing="20">
+            <Label Text="ToolTinted ImageButton"
+                   Background="Transparent"
+                   TextColor="{DynamicResource PrimaryTextColor}"
+                   FontSize="14"
+                   Grid.Column="0" />
+            <ImageButton Source="circle_exclaimation.png"
+                         Aspect="Center"
+                         BorderWidth="2"
+                         CornerRadius="3"
+                         BackgroundColor="Transparent"
+                         BorderColor="{DynamicResource DefaultBorderColor}"
+                         Grid.Column="1"
+                         WidthRequest="40"
+                         HeightRequest="40">
+                <ImageButton.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="{StaticResource ImageTintColor}" />
+                </ImageButton.Behaviors>
+            </ImageButton>
+            <ImageButton Source="circle_exclaimation.png"
+                         Aspect="Center"
+                         BorderWidth="2"
+                         CornerRadius="3"
+                         BackgroundColor="Transparent"
+                         BorderColor="{DynamicResource DefaultBorderColor}"
+                         helpers:IconTintColor.TintColor="{DynamicResource ImageTintColor}"
+                         Grid.Column="2"
+                         WidthRequest="40"
+                         HeightRequest="40" />
+        </Grid>
+
+        <Grid ColumnDefinitions="300, Auto"
+              Grid.Row="5"
+              ColumnSpacing="20">
+            <Label Text="Untouched MS Button"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   Background="Transparent"
+                   TextColor="{DynamicResource PrimaryTextColor}"
+                   FontSize="14"
+                   Grid.Column="0" />
+            <Button Text="Button Text"
+                    Background="{DynamicResource OtherBackgroundColor}"
+                    BorderWidth="2"
+                    CornerRadius="3"
+                    ImageSource="circle_exclaimation.png"
+                    BorderColor="{DynamicResource DefaultBorderColor}"
+                    TextColor="{DynamicResource PrimaryTextColor}"
+                    Grid.Column="1" />
+        </Grid>
+
+        <Grid ColumnDefinitions="300, Auto, Auto"
+              Grid.Row="6"
+              ColumnSpacing="20">
+            <Label Text="ToolTinted MS Button"
+                   Background="Transparent"
+                   TextColor="{DynamicResource PrimaryTextColor}"
+                   FontSize="14"
+                   Grid.Column="0" />
+            <Button Text="Button Text"
+                    Background="{DynamicResource OtherBackgroundColor}"
+                    BorderWidth="2"
+                    CornerRadius="3"
+                    ImageSource="circle_exclaimation.png"
+                    SemanticProperties.Hint="Test Button with generic TintIconBehavior"
+                    BorderColor="{DynamicResource DefaultBorderColor}"
+                    TextColor="{DynamicResource PrimaryTextColor}"
+                    Grid.Column="1">
+                <Button.Behaviors>
+                    <toolkit:IconTintColorBehavior TintColor="{StaticResource ImageTintColor}" />
+                </Button.Behaviors>
+            </Button>
+            <Button Text="Button Text"
+                    Background="{DynamicResource OtherBackgroundColor}"
+                    BorderWidth="2"
+                    CornerRadius="3"
+                    ImageSource="circle_exclaimation.png"
+                    SemanticProperties.Hint="Test Button with attached property TintIconBehavior"
+                    BorderColor="{DynamicResource DefaultBorderColor}"
+                    TextColor="{DynamicResource PrimaryTextColor}"
+                    helpers:IconTintColor.TintColor="{DynamicResource ImageTintColor}"
+                    Grid.Column="2" />
+        </Grid>
+
+
+    </Grid>
+</ContentView>

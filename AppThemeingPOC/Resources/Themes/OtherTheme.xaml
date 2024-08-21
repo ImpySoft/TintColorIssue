@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppThemeingPOC.Resources.Themes.OtherTheme">
+
+    <Color x:Key="PrimaryBackgroundColor">#FFD80093</Color>
+    <Color x:Key="OtherBackgroundColor">#FFFF93DA</Color>
+
+    <Color x:Key="PrimaryTextColor">#FF246FE8</Color>
+    <Color x:Key="OtherTextColor">#FF94BFFF</Color>
+
+    <Color x:Key="DefaultBorderColor">#FFB94E00</Color>
+
+    <Color x:Key="ImageTintColor">#FF22FF1F</Color>
+
+</ResourceDictionary>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView x:Class="AppThemeingPOC.Views.ThemeController"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <HorizontalStackLayout>
+
+
+        <Label x:Name="ActiveThemeLabel"
+               VerticalOptions="Center"
+               TextColor="{DynamicResource PrimaryTextColor}" />
+
+        <Button Text="Light Theme"
+                Clicked="OnLightThemeClicked"
+                Background="{DynamicResource OtherBackgroundColor}"
+                BorderColor="{DynamicResource DefaultBorderColor}"
+                TextColor="{DynamicResource PrimaryTextColor}"
+                Margin="6" />
+        <Button Text="Dark Theme"
+                Clicked="OnDarkThemeClicked"
+                Background="{DynamicResource OtherBackgroundColor}"
+                BorderColor="{DynamicResource DefaultBorderColor}"
+                TextColor="{DynamicResource PrimaryTextColor}"
+                Margin="6" />
+        <Button Text="High Contrast Theme"
+                Clicked="OnHiResThemeClicked"
+                Background="{DynamicResource OtherBackgroundColor}"
+                BorderColor="{DynamicResource DefaultBorderColor}"
+                TextColor="{DynamicResource PrimaryTextColor}"
+                Margin="6" />
+        <Button Text="Other Theme"
+                Clicked="OnOtherThemeClicked"
+                Background="{DynamicResource OtherBackgroundColor}"
+                BorderColor="{DynamicResource DefaultBorderColor}"
+                TextColor="{DynamicResource PrimaryTextColor}"
+                Margin="6" />
+
+        <Label Text="Auto Restart?"
+               VerticalOptions="Center"
+               TextColor="{DynamicResource PrimaryTextColor}" />
+        <CheckBox x:Name="AutoRestartCheckBox"
+                  IsChecked="True"
+                  Background="{DynamicResource OtherBackgroundColor}"
+                  Margin="6,6,20,6" />
+
+        <Label x:Name="ThemeChangeWarningLabel"
+               Text="Restart the Application to Make new theme active."
+               IsVisible="False"
+               VerticalOptions="Center"
+               TextColor="{DynamicResource PrimaryTextColor}" />
+
+    </HorizontalStackLayout>
+</ContentView>

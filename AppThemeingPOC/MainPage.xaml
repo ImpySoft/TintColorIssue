@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="AppThemeingPOC.MainPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:views="using:AppThemeingPOC.Views">
+
+    <Grid Background="{DynamicResource OtherBackgroundColor}"
+          RowDefinitions="Auto,Auto,*,Auto">
+        <VerticalStackLayout Grid.Row="0">
+            <Label MaxLines="20"
+                   TextColor="{DynamicResource PrimaryTextColor}"
+                   FontAttributes="Bold"
+                   Margin="6,6,6,12">
+                Requirements:
+            </Label>
+            <Label MaxLines="20"
+                   TextColor="{DynamicResource PrimaryTextColor}"
+                   Margin="6,6,6,12">
+                An Enterprise level desktop application requires support for more than 2 themes (Dark and Light) to deliver a UI that is fully accessible.  Examples: Dark, Light, high contrast, and other. For purposes of this POC let’s assume we need these four with the ability to add others in the future.
+            </Label>
+            <Label MaxLines="20"
+                   TextColor="{DynamicResource PrimaryTextColor}"
+                   Margin="6,6,6,12">
+                Theming should address Color changes, Image Color Changes, Font changes, different control styles and templates, and should ideally, be able to happen on the fly (Hot Swapping) vs at application startup (Start up Swapping).  *Note Due to current limitations (Only two themes supported) of the MAUI AppThemeBinding method, this POC will focus on Startup Swapping using Resource Dictionaries as defined here.
+            </Label>
+            <Label MaxLines="20"
+                   TextColor="{DynamicResource OtherTextColor}"
+                   Margin="6,6,6,6">
+                https://learn.microsoft.com/en-us/dotnet/maui/user-interface/theming
+            </Label>
+        </VerticalStackLayout>
+        <views:ThemeController Grid.Row="1"
+                               Padding="20,4,20,4" />
+        <views:TintColorPage Grid.Row="2"
+                             Padding="20" />
+
+        <Grid ColumnDefinitions="Auto, Auto, Auto"
+              Grid.Row="3"
+              ColumnSpacing="20">
+            <Label Text="Dropdown Icon Color Lost Test"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   Background="Transparent"
+                   TextColor="{DynamicResource PrimaryTextColor}"
+                   FontSize="14"
+                   Grid.Column="0"
+                   Margin="10" />
+            <Button Text="Toggle Popup"
+                    Clicked="OnPopupButtonClicked"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Background="{DynamicResource OtherBackgroundColor}"
+                    BorderWidth="2"
+                    CornerRadius="3"
+                    ImageSource="circle_exclaimation.png"
+                    BorderColor="{DynamicResource DefaultBorderColor}"
+                    TextColor="{DynamicResource PrimaryTextColor}"
+                    Grid.Column="1"
+                    Margin="10" />
+
+        </Grid>
+    </Grid>
+
+
+</ContentPage>
